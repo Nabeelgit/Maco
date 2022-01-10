@@ -1,0 +1,260 @@
+<!doctype html>
+<html>
+ <head>
+  <title>Maco cart</title>
+  <link rel="stylesheet" href="cart.css">
+ </head>
+ <body>
+  <!-- The overlay -->
+  <div id="myNav" class="overlay">
+   
+   <!-- Button to close the overlay navigation -->
+   <a href="javascript:void(0)"
+    class="closebtn"
+    onclick="closeNav()">&times;</a>
+   
+   <!-- Overlay content -->
+   <div class="overlay-content">
+    <a href="index.html">Home</a>
+    <a
+     href="contact.html">Contact</a>
+     <a href="about.html">About</a>
+   </div>
+   
+  </div>
+  
+  <!-- Use any element to open/show the overlay navigation menu -->
+  <center>
+   <button class="glow-on-hover" type="button"
+    onclick="openNav()">OPEN MENU</button>
+   <h1>Maco cart</h1>
+  <h2>Number of items in cart: <span id="cartItems">0</span></h2>
+    <a href="ordered.html"  id="order"><button class="glow-on-hover">Order</button></a>
+  </center>
+  <div id="root">
+    <!-- Car 1 !-->
+
+ <div class="container" id="cont1">
+  <div class="box">
+  <img src="https://wallpapercave.com/wp/TQ5XDUW.jpg"/>
+  <h2>Car 1</h2>
+  <h3>Price: $20,000 </h3>
+  <h4>Description: Cool black car</h4>
+    <button id="btn1" class="glow-on-hover">Remove from cart</button>
+  </div>
+  </div>
+
+
+  <!-- Car 2 !-->
+   <div class="container" id="cont2">
+  <div class="box">
+  <img src="https://wallpaperaccess.com/full/1123728.jpg"/>
+  <h2>Car 2</h2>
+  <h3>Price: $10,000 </h3>
+  <h4>Description: Cool black car</h4>
+  <button id="btn2" class="glow-on-hover">Remove from cart</button>
+  </div>
+  </div>
+
+
+  <!-- Car 3 !-->
+   <div class="container" id="cont3">
+  <div class="box">
+  <img src="https://wallpaperaccess.com/full/2544693.jpg"/>
+  <h2>Car 3</h2>
+  <h3>Price: $10,000</h3>
+  <h4>Description: Cool black car</h4>
+  <button id="btn3" class="glow-on-hover">Remove from cart</button>
+  </div>
+  </div>
+
+
+  <!-- Car 4 !-->
+   <div class="container" id="cont4">
+  <div class="box">
+  <img src="https://www.teahub.io/photos/full/47-479778_black-car-background-hd.jpg"/>
+  <h2>Car 4</h2>
+  <h3>Price: $20,000</h3>
+  <h4>Description: Cool black car</h4>
+  <button id="btn4" class="glow-on-hover">Remove from cart</button>
+  </div>
+  </div>
+
+
+  <!-- Car 5 !-->
+   <div class="container" id="cont5">
+  <div class="box">
+  <img src="https://www.wallpapertip.com/wmimgs/129-1294777_1920x1080-black-cars-wallpapers-data-id-data-src.jpg"/>
+  <h2>Car 5</h2>
+  <h3>Price: $10,000 </h3>
+  <h4>Description: Cool black car</h4>
+  <button id="btn5" class="glow-on-hover">Remove from cart</button>
+  </div>
+  </div>
+
+
+  <!-- Car 6 !-->
+   <div class="container" id="cont6">
+  <div class="box">
+  <img src="https://wallpaperaccess.com/full/2544674.jpg"/>
+  <h2>Car 6</h2>
+  <h3>Price: $30,000 </h3>
+  <h4>Description: Cool black car</h4>
+  <button id="btn6" class="glow-on-hover">Remove from cart</button>
+  </div>
+  </div>
+  </div>
+  <script>
+    function openNav() {
+  document.getElementById("myNav").style.width = "100%";
+}
+
+
+function closeNav() {
+  document.getElementById("myNav").style.width = "0%";
+}
+
+let cartItemCount = localStorage.getItem("cartNum")
+let cartNum = document.getElementById("cartItems")
+cartNum.innerHTML = cartItemCount
+let car1 = localStorage.getItem("car1")
+let car2 = localStorage.getItem("car2")
+let car3 = localStorage.getItem("car3")
+let car4 = localStorage.getItem("car4")
+let car5 = localStorage.getItem("car5")
+let car6 = localStorage.getItem("car6")
+
+let containerOne = document.getElementById("cont1")
+let containerTwo = document.getElementById("cont2")
+let containerThree = document.getElementById("cont3")
+let containerFour =  document.getElementById("cont4")
+let containerFive = document.getElementById("cont5")
+let containerSix = document.getElementById("cont6")
+
+let btnOne = document.getElementById("btn1")
+let btnTwo = document.getElementById("btn2")
+let btnThree = document.getElementById("btn3")
+let btnFour = document.getElementById("btn4")
+let btnFive = document.getElementById("btn5")
+let btnSix = document.getElementById("btn6")
+
+let numCount = parseInt(cartItemCount)
+
+btn1.addEventListener("click", function() {
+  containerOne.style.display = "none"
+numCount--
+cartNum.innerHTML = numCount
+  localStorage.removeItem("car1")
+  localStorage.setItem("car1", false)
+  localStorage.removeItem("cartNum")
+  localStorage.setItem("cartNum", numCount)
+})
+
+btn2.addEventListener("click", function() {
+  containerTwo.style.display= "none"
+  numCount--
+  cartNum.innerHTML= numCount
+  localStorage.removeItem("car2")
+  localStorage.setItem("car2", false)
+  localStorage.removeItem("cartNum")
+  localStorage.setItem("cartNum", numCount)
+})
+
+btn3.addEventListener("click", function() {
+  containerThree.style.display = "none"
+  numCount--
+  cartNum.innerHTML = numCount
+    localStorage.removeItem("car3")
+    localStorage.setItem("car3", false)
+    localStorage.removeItem("cartNum")
+  localStorage.setItem("cartNum", numCount)
+})
+
+btn4.addEventListener("click", function() {
+  containerFour.style.display = "none"
+  numCount--
+  cartNum.innerHTML = numCount
+  localStorage.removeItem("car4")
+  localStorage.setItem("car4", false)
+    localStorage.removeItem("cartNum")
+  localStorage.setItem("cartNum", numCount)
+})
+
+btn5.addEventListener("click", function() {
+  containerFive.style.display = "none"
+  numCount--
+  cartNum.innerHTML = numCount
+  localStorage.removeItem("car5")
+  localStorage.setItem("car5", false)
+  localStorage.removeItem("cartNum")
+  localStorage.setItem("cartNum", numCount)
+})
+
+btn6.addEventListener("click", function() {
+  containerSix.style.display = "none"
+  numCount--
+  cartNum.innerHTML = numCount
+  localStorage.removeItem("car6")
+  localStorage.setItem("car6", false)
+    localStorage.removeItem("cartNum")
+  localStorage.setItem("cartNum", numCount)
+})
+
+let  order = document.getElementById("order")
+if (car1 == "true"){
+   containerOne.style.display = "block"
+   
+} else {
+    containerOne.style.display = "none"
+    
+}
+
+if (car2 == "true"){
+  containerTwo.style.display = "block"
+  
+}
+else {
+  containerTwo.style.display = "none"
+
+}
+
+if (car3 == "true"){
+  containerThree.style.display = "block"
+  
+}
+else {
+  containerThree.style.display = "none"
+  
+}
+
+if (car4 == "true"){
+  containerFour.style.display = "block"
+
+}
+else {
+  containerFour.style.display = "none"
+  
+}
+
+if (car5 == "true"){
+  containerFive.style.display = "block"
+  
+}
+else {
+  containerFive.style.display = "none"
+
+}
+
+if (car6 == "true"){
+  containerSix.style.display = "block"
+  
+}
+else {
+  containerSix.style.display = "none"
+  
+}
+
+
+  </script>
+ </body>
+</html>
